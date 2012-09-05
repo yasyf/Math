@@ -1,0 +1,57 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+
+# Images #
+######################
+*.jpg
+*.jpeg
+*.tiff
+*.png
+#*.flv
+#*.fla
+#*.swf
+*.gif
+*.psb
+*.psd
+
+# OS generated files #
+######################
+.DS_Store?
+.DS_Store
+*.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+reunion/
+roll/
+GhostCPA/
+wp/
+images/
+gallery/
+work/
+*/image/*
+*/images/*
+old/crp/
+old/cub
+old/images
+_notes/
