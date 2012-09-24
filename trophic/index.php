@@ -50,11 +50,11 @@ ob_start(); // start the output buffer
 		}
 	}
 	else {
-		echo "Values For 'd', 'a', and 'n' Must Be Integers!";
+		echo "Values For 'n', 'p', and 'i' Must Be Integers!";
 	}
 	}
 	else {
-		echo "Values For 'd', 'a', and 'n' Must Be Entered!";
+		echo "Values For 'n', 'p', and 'i' Must Be Entered!";
 	}
 	?>
 	</div>
