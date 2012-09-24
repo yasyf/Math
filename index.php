@@ -23,28 +23,27 @@ ob_start(); // start the output buffer
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Math</title>
 	<meta name="author" content="Yasyf Mohamedali">
-	<link rel="stylesheet" type="text/css" href="http://www.webputty.net/css/agtzfmNzc2ZpZGRsZXIMCxIEUGFnZRj7rRsM" />
-	<script type="text/javascript">(function(w,d){if(w.location!=w.parent.location||w.location.search.indexOf('__preview_css__')>-1){var t=d.createElement('script');t.type='text/javascript';t.async=true;t.src='http://www.webputty.net/js/agtzfmNzc2ZpZGRsZXIMCxIEUGFnZRj7rRsM';(d.body||d.documentElement).appendChild(t);}})(window,document);</script>
+	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
 	<div>
 		<em>Arithmetic Series:</em> <br />
 		<a href="arithmetic%20series%20term%20finder">[arithmetic series term finder]</a><br />
-		<a href="arithmetic%20series%20sum%20calculator">[arithmetic sequence sum calculator]</a><br /><br /><br /><br />
+		<a href="arithmetic%20series%20sum%20calculator">[arithmetic sequence sum calculator]</a><br /><br />
 		<em>Geometric Series:</em> <br />
 		<a href="geometric%20series%20term%20finder">[geometric series term finder]</a><br />
-		<a href="geometric%20series%20sum%20calculator">[geometric sequence sum calculator]</a><br /><br /><br /><br />
+		<a href="geometric%20series%20sum%20calculator">[geometric sequence sum calculator]</a><br /><br />
 	<em>Infinite Series:</em> <br />
 	<a href="infinite%20series%20checker">[infinite series checker]</a><br />
-<a href="infinite%20series%20sum%20calculator">[infinite sequence sum calculator]</a><br /><br /><br /><br /><br />
+<a href="infinite%20series%20sum%20calculator">[infinite sequence sum calculator]</a><br /><br /><br />
 	<em>Miscellaneous:</em> <br />
 	<a href="series%20generator">[series generator]</a><br />
 <a href="sigma%20notation%20generator">[sigma notation generator]</a><br />
-<a href="trophic">[energy through trophic levels calculator]</a><br /><br /><br /><br /><br />
-© Copyright 2011 Yasyf Mohamedali. All Rights Reserved.<br />
+<a href="trophic">[energy through trophic levels calculator]</a><br /><br />
+© Copyright 2012 Yasyf Mohamedali. All Rights Reserved.<br />
 </div>
 
-<p style="font-size:12px;color:#FFFFFF;text-align:center;"><a style="font-size:12px;color:#FFFFFF;" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Pre-Calculus 11 Site</span> by <a style="font-size:12px;color:#FFFFFF;" xmlns:cc="http://creativecommons.org/ns#" href="http://www.yasyf.com" property="cc:attributionName" rel="cc:attributionURL">Yasyf Mohamedali </a> is licensed under a <br /> <a style="font-size:12px;color:#FFFFFF;" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License</a>.</p>
+<p style="font-size:12px;color:#FFFFFF;text-align:center;"><a style="font-size:12px;color:#FFFFFF;" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Math with PHP Site</span> by <a style="font-size:12px;color:#FFFFFF;" xmlns:cc="http://creativecommons.org/ns#" href="http://www.yasyf.com" property="cc:attributionName" rel="cc:attributionURL">Yasyf Mohamedali </a> is licensed under a <br /> <a style="font-size:12px;color:#FFFFFF;" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License</a>.</p>
 </div>
 </body>
 </html>
