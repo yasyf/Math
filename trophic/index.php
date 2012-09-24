@@ -43,10 +43,21 @@ ob_start(); // start the output buffer
 		
 		$preseved = $p/100;
 		$base = $i;
-		for ($x=1;$x<=$n;$x++) {
-		$present = round($base * pow($preseved,$x),3);
-		$lost = round($base - $present,3);
-		echo("<b>Level: $x</b> <br /> Present: $present <br /> Lost: $lost <br /> <br />");
+		for ($x=0;$x<$n;$x++) {
+			if($x===0)
+			{
+				$presentPrevious = $base * pow($preseved,$x);
+			}
+		else {
+			$presentPrevious = $base * pow($preseved,$x-1);
+		}
+		$present = $base * pow($preseved,$x);
+		$lost = $presentPrevious - $present;
+		
+		$present = round($present,3);
+		$lost = round($lost,3);
+		$level = $x+1;
+		echo("<b>Level: $level</b> <br /> Present: $present <br /> Lost: $lost <br /> <br />");
 		}
 	}
 	else {
