@@ -39,7 +39,8 @@ ob_start(); // start the output buffer
 <a href="infinite%20series%20sum%20calculator">[infinite sequence sum calculator]</a><br /><br /><br /><br /><br />
 	<em>Miscellaneous:</em> <br />
 	<a href="series%20generator">[series generator]</a><br />
-<a href="sigma%20notation%20generator">[sigma notation generator]</a><br /><br /><br /><br /><br />
+<a href="sigma%20notation%20generator">[sigma notation generator]</a><br />
+<a href="trophic">[energy through trophic levels calculator]</a><br /><br /><br /><br /><br />
 © Copyright 2011 Yasyf Mohamedali. All Rights Reserved.<br />
 </div>
 
