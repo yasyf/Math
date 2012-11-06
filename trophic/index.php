@@ -19,7 +19,8 @@ ob_start(); // start the output buffer
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="../style.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../style.css" />
 	</head>
 	<body>
 			<div>
@@ -71,7 +72,35 @@ ob_start(); // start the output buffer
 		echo "Values For 'n', 'p', and 'i' Must Be Entered!";
 	}
 	?>
-	</div>
+	<br /><br /><br /><br /><span id="short"></span>
+		</div>
+		<script type="text/javascript">
+		function showHide(ID) {
+				elem = document.getElementById(ID);
+				if (elem.style.display == 'none') {
+					elem.style.display = 'block';
+				}
+				else{
+					elem.style.display = 'none';
+				}
+			}
+			
+			 $.getJSON(
+			        "http://api.bitly.com/v3/shorten?callback=?", 
+			        { 
+			            "format": "json",
+			            "apiKey": "R_a551579385b3fb84f6796876d396659b",
+			            "login": "yasyf",
+			            "longUrl": window.location.href
+			        },
+			        function(response)
+			        {
+			document.getElementById("short").innerHTML =  "Link to this page: <a href='"+response.data.url+"'>"+response.data.url+"</a>";
+			}
+			    );
+
+
+		</script>
 	</body>
 </html>
 

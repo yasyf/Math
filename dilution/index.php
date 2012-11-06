@@ -19,51 +19,100 @@ ob_start(); // start the output buffer
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../style.css" />
 	</head>
 	<body>
 			<div>
 				<form action="" method="get">
 					initial concentration = <input type="text" name="Ci" value="<?php echo $_GET['Ci']; ?>" /> <br />
-					liters carried forward = <input type="text" name="Lf" value="<?php echo $_GET['Lf']; ?>" /> <br />
-					liters diluted to = <input type="text" name="Ld" value="<?php echo $_GET['Ld']; ?>" /> <br />
+					liters of solution carried forward = <input type="text" name="Lf1" value="<?php echo $_GET['Lf1']; ?>" /> <br />
+					liters diluted to = <input type="text" name="Ld1" value="<?php echo $_GET['Ld1']; ?>" /> <br />
+					<span onclick="showHide('s2');">(optional) step 2:</span><br />
+					<span style="display: none;" id="s2">liters of solution carried forward = <input type="text" name="Lf2" value="<?php echo $_GET['Lf2']; ?>" /> <br />				liters diluted to = <input type="text" name="Ld2" value="<?php echo $_GET['Ld2']; ?>" /> <br /></span>
+					<span onclick="showHide('s3');">(optional) step 3:</span><br />
+					<span id="s3" style="display: none;">liters of solution carried forward = <input type="text" name="Lf3" value="<?php echo $_GET['Lf3']; ?>" /> <br />
+					liters diluted to = <input type="text" name="Ld3" value="<?php echo $_GET['Ld3']; ?>" /> <br /></span>
+					<br />
 					number of dilutions = <input type="text" name="n" value="<?php echo $_GET['n']; ?>" /> <br />
 					<input type="submit" value="Submit" />
 					</form>
 	<?php
 	error_reporting(0);
-	if (isset($_GET['Ci']) && isset($_GET['Lf']) && isset($_GET['Ld'])  && isset($_GET['n']))
+	if (isset($_GET['Ci']) && isset($_GET['Lf1']) && isset($_GET['Ld1']) && isset($_GET['n']))
 
 	{
-	if (is_numeric($_GET['Ci']) && is_numeric($_GET['Lf']) && is_numeric($_GET['Ld']) && is_numeric($_GET['n']))	
+	if (is_numeric($_GET['Ci']) && is_numeric($_GET['Lf1']) && is_numeric($_GET['Ld1']) && is_numeric($_GET['n']))	
 
 	{
 		$Ci = $_GET['Ci'];
-		$Lf = $_GET['Lf'];
-		$Ld = $_GET['Ld'];
+		$Lf1 = $_GET['Lf1'];
+		$Ld1 = $_GET['Ld1'];
+		$Lf2 = $_GET['Lf2'];
+		$Ld2 = $_GET['Ld2'];
+		$Lf3 = $_GET['Lf3'];
+		$Ld3 = $_GET['Ld3'];
 		$n = $_GET['n'];
-		$conc = $Ci;
 	for ($i=0;$i<=$n;$i++) {
-		$tt = $i+1;
-		if($i>0)
-		{
-		$moles = $Ci*$Lf;
-		$conc = $moles / $Ld;	
-		}
-		$Ci = $conc;
-		echo "Test Tube $tt: $conc M <br />";
+			$tt = $i+1;
+			if($i>0)
+			{
+			$Ci = dilute($Ci,$Lf1,$Ld1);
+			if(isset($_GET['Lf2']) && isset($_GET['Ld2']) && is_numeric($_GET['Lf2']) && is_numeric($_GET['Ld2']))
+			{
+			$Ci = dilute($Ci,$Lf2,$Ld2);
+			}
+			if(isset($_GET['Lf3']) && isset($_GET['Ld3']) && is_numeric($_GET['Lf3']) && is_numeric($_GET['Ld3']))
+			{
+			$Ci = dilute($Ci,$Lf3,$Ld3);
+			}
+			}
+			echo "Test Tube $tt: $Ci M <br />";
 	}
 	
 		}
 	else {
-		echo "Values For 'n', 'p', and 'i' Must Be Integers!";
+		echo "Values Must Be Integers!";
 	}
 	}
 	else {
-		echo "Values For 'n', 'p', and 'i' Must Be Entered!";
+		echo "Shown Values Must Be Entered!";
+	}
+	function dilute($Ci,$Lf,$Ld) {
+				$moles = $Ci*$Lf;
+				$conc = $moles / $Ld;	
+				return $conc;
 	}
 	?>
+	<br /><br /><br /><br /><span id="short"></span>
 	</div>
+	<script type="text/javascript">
+	function showHide(ID) {
+			elem = document.getElementById(ID);
+			if (elem.style.display == 'none') {
+				elem.style.display = 'block';
+			}
+			else{
+				elem.style.display = 'none';
+			}
+		}
+		
+		 $.getJSON(
+		        "http://api.bitly.com/v3/shorten?callback=?", 
+		        { 
+		            "format": "json",
+		            "apiKey": "R_a551579385b3fb84f6796876d396659b",
+		            "login": "yasyf",
+		            "longUrl": window.location.href
+		        },
+		        function(response)
+		        {
+		document.getElementById("short").innerHTML =  "Link to this page: <a href='"+response.data.url+"'>"+response.data.url+"</a>";
+		}
+		    );
+
+
+	</script>
 	</body>
 </html>
 

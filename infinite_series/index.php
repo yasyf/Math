@@ -19,8 +19,8 @@ ob_start(); // start the output buffer
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="http://www.webputty.net/css/agtzfmNzc2ZpZGRsZXIMCxIEUGFnZRj7rRsM" />
-	<script type="text/javascript">(function(w,d){if(w.location!=w.parent.location||w.location.search.indexOf('__preview_css__')>-1){var t=d.createElement('script');t.type='text/javascript';t.async=true;t.src='http://www.webputty.net/js/agtzfmNzc2ZpZGRsZXIMCxIEUGFnZRj7rRsM';(d.body||d.documentElement).appendChild(t);}})(window,document);</script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../style.css" />
 	</head>
 	<body>
 		<div>
@@ -68,7 +68,35 @@ else {
 	echo "Value For 'r' Must Be Entered!";
 }
 ?>
-</div>
+<br /><br /><br /><br /><span id="short"></span>
+	</div>
+	<script type="text/javascript">
+	function showHide(ID) {
+			elem = document.getElementById(ID);
+			if (elem.style.display == 'none') {
+				elem.style.display = 'block';
+			}
+			else{
+				elem.style.display = 'none';
+			}
+		}
+		
+		 $.getJSON(
+		        "http://api.bitly.com/v3/shorten?callback=?", 
+		        { 
+		            "format": "json",
+		            "apiKey": "R_a551579385b3fb84f6796876d396659b",
+		            "login": "yasyf",
+		            "longUrl": window.location.href
+		        },
+		        function(response)
+		        {
+		document.getElementById("short").innerHTML =  "Link to this page: <a href='"+response.data.url+"'>"+response.data.url+"</a>";
+		}
+		    );
+
+
+	</script>
 </body>
 </html>
 <?php
