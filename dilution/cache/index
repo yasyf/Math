@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../style.css" />
+	</head>
+	<body>
+			<div>
+				<form action="" method="get">
+					initial concentration = <input type="text" name="Ci" value="" /> <br />
+					liters carried forward = <input type="text" name="Lf" value="" /> <br />
+					liters diluted to = <input type="text" name="Ld" value="" /> <br />
+					number of dilutions = <input type="text" name="n" value="" /> <br />
+					<input type="submit" value="Submit" />
+					</form>
+	Values For 'n', 'p', and 'i' Must Be Entered!	</div>
+	</body>
+</html>
+

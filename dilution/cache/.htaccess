@@ -1,0 +1,5 @@
+Header set Cache-Control "max-age=29030400, public"
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresDefault A2592000
+</IfModule>

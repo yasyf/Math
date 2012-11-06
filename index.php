@@ -28,18 +28,19 @@ ob_start(); // start the output buffer
 <body>
 	<div>
 		<em>Arithmetic Series:</em> <br />
-		<a href="arithmetic%20series%20term%20finder">[arithmetic series term finder]</a><br />
-		<a href="arithmetic%20series%20sum%20calculator">[arithmetic sequence sum calculator]</a><br /><br />
+		<a href="arithmetic_series_term">[arithmetic series term finder]</a><br />
+		<a href="arithmetic_series_sum">[arithmetic sequence sum calculator]</a><br /><br />
 		<em>Geometric Series:</em> <br />
-		<a href="geometric%20series%20term%20finder">[geometric series term finder]</a><br />
-		<a href="geometric%20series%20sum%20calculator">[geometric sequence sum calculator]</a><br /><br />
+		<a href="geometric_series_term">[geometric series term finder]</a><br />
+		<a href="geometric_series_sum">[geometric sequence sum calculator]</a><br /><br />
 	<em>Infinite Series:</em> <br />
-	<a href="infinite%20series%20checker">[infinite series checker]</a><br />
-<a href="infinite%20series%20sum%20calculator">[infinite sequence sum calculator]</a><br /><br /><br />
+	<a href="infinite_series">[infinite series checker]</a><br />
+<a href="infinite_series_sum">[infinite sequence sum calculator]</a><br /><br /><br />
 	<em>Miscellaneous:</em> <br />
-	<a href="series%20generator">[series generator]</a><br />
-<a href="sigma%20notation%20generator">[sigma notation generator]</a><br />
+	<a href="series">[series generator]</a><br />
+<a href="sigma_notation">[sigma notation generator]</a><br />
 <a href="trophic">[energy through trophic levels calculator]</a><br /><br />
+<a href="dilution">[multiple dilutions calculator]</a><br /><br />
 © Copyright 2012 Yasyf Mohamedali. All Rights Reserved.<br />
 </div>
 
