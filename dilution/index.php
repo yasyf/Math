@@ -42,10 +42,14 @@ ob_start(); // start the output buffer
 		$Lf = $_GET['Lf'];
 		$Ld = $_GET['Ld'];
 		$n = $_GET['n'];
-	for ($i=0;$i<$n;$i++) {
+		$conc = $Ci;
+	for ($i=0;$i<=$n;$i++) {
 		$tt = $i+1;
+		if($i>0)
+		{
 		$moles = $Ci*$Lf;
-		$conc = $moles / $Ld;
+		$conc = $moles / $Ld;	
+		}
 		$Ci = $conc;
 		echo "Test Tube $tt: $conc M <br />";
 	}
