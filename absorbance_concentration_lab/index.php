@@ -51,7 +51,7 @@ ob_start(); // start the output buffer
 				
 					<div id="fields">
 					<?php
-					for ($i=2;$i<$_GET['n'];$i++) { 
+					for ($i=2;$i<=$_GET['n'];$i++) { 
 					extract($_GET, EXTR_SKIP);
 					$var = "Ax$i";
 					$Ax = $$var;
@@ -62,6 +62,7 @@ ob_start(); // start the output buffer
 					<input type="submit" value="Submit" />
 					</form>
 					<center>
+					<br />Data<br />
 					<table border=1>
 					  <tbody>
 					    <!-- Results table headers -->
@@ -77,7 +78,7 @@ ob_start(); // start the output buffer
 
 					    </tr>
 	<?php
-	//error_reporting(0);
+	error_reporting(0);
 			if (isset($_GET['n']) && is_numeric($_GET['n']))
 			{
 		extract($_GET, EXTR_SKIP);
@@ -143,6 +144,8 @@ ob_start(); // start the output buffer
 										<th>K<sub>eq</sub> C</th>
 										<th>K<sub>eq</sub> D</th>
 										</tr>			<?php
+			if (isset($_GET['n']) && is_numeric($_GET['n']))
+						{
 			$A = array();
 			$B = array();
 			$C = array();
@@ -173,7 +176,7 @@ ob_start(); // start the output buffer
 						echo "<td id='total C'>$Cratio</td>";
 						echo "<td id='total D'>$Dratio</td>";
 						echo("</tr>");
-
+						}
 	function dilute($Ci,$Lf,$Ld) {
 				$moles = $Ci*$Lf;
 				$conc = $moles / $Ld;	

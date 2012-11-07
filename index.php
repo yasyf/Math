@@ -46,9 +46,11 @@ ob_start(); // start the output buffer
 © Copyright 2012 Yasyf Mohamedali. All Rights Reserved.<br />
 </div>
 
-<p style="font-size:12px;color:#FFFFFF;text-align:center;"><a style="font-size:12px;color:#FFFFFF;" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Math with PHP Site</span> by <a style="font-size:12px;color:#FFFFFF;" xmlns:cc="http://creativecommons.org/ns#" href="http://www.yasyf.com" property="cc:attributionName" rel="cc:attributionURL">Yasyf Mohamedali </a> is licensed under a <br /> <a style="font-size:12px;color:#FFFFFF;" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License</a>.</p>
+<p style="font-size:12px;color:#FFFFFF;text-align:center;"><a style="font-size:12px;color:#FFFFFF;" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Math with PHP Site</span> by <a style="font-size:12px;color:#FFFFFF;" xmlns:cc="http://creativecommons.org/ns#" href="http://www.yasyf.com" property="cc:attributionName" rel="cc:attributionURL">Yasyf Mohamedali </a> is licensed under a <br /> <a style="font-size:12px;color:#FFFFFF;" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License</a>.
+<span id="short" style="text-align: center;"></span>
+</p>
 </div>
-<br /><br /><br /><br /><span id="short"></span>
+<br /><br /><br /><br />
 	</div>
 	<script type="text/javascript">
 	function showHide(ID) {

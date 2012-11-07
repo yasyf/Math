@@ -1,18 +1,101 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../style.css" />
 	</head>
 	<body>
+	<script type="text/javascript">
+						function updateFields(){
+						$('#fields').html("");
+						for (var i=2;i<=document.getElementById('n').value;i++)
+						{ 
+						$('#fields').append("absorbance of tube "+i+" = <input type='text' name='Ax"+i+"' /> <br />");
+						}
+						
+					}
+						</script>
 			<div>
 				<form action="" method="get">
-					initial concentration = <input type="text" name="Ci" value="" /> <br />
-					liters carried forward = <input type="text" name="Lf" value="" /> <br />
-					liters diluted to = <input type="text" name="Ld" value="" /> <br />
-					number of dilutions = <input type="text" name="n" value="" /> <br />
+					number of test tubes = <input type="text" name="n" id="n" value="" onblur="updateFields();" /> <br />
+					Intial Concentrations:<br />
+					initial concentration Fe<sup>3+</sup> source = <input type="text" name="CiFe" value="" /> <br />
+					initial concentration SCN<sup>-</sup> source = <input type="text" name="CiSCN" value="" /> <br />
+					Serial Dilution:<br />
+					liters of Fe<sup>3+</sup> solution carried forward = <input type="text" name="Lf1Fe" value="" /> <br />
+					liters Fe<sup>3+</sup> solution diluted to = <input type="text" name="Ld1Fe" value="" /> <br />
+					Reaction Dilution:<br />
+					liters of Fe<sup>3+</sup> solution = <input type="text" name="Lf2Fe" value="" /> <br />					liters of SCN<sup>-</sup> solution = <input type="text" name="Lf2SCN" value="" /> <br />
+					<br />
+					
+					Absorbance Concentrations:<br />
+					absorbance of tube 1 = <input type="text" name="Ai"  value="" /> <br />
+				
+					<div id="fields">
+										</div>
 					<input type="submit" value="Submit" />
 					</form>
-	Values For 'n', 'p', and 'i' Must Be Entered!	</div>
+					<center>
+					<br />Data<br />
+					<table border=1>
+					  <tbody>
+					    <!-- Results table headers -->
+					    <tr>
+						<th>Tube</th>
+						<th>[Fe<sup>3+</sup>]<sub>i</sub></th>
+					      <th>[SCN<sup>-</sup>]<sub>i</sub></th>
+						<th>[FeSCN<sup>2+</sup>]<sub>i</sub></th>
+					      <th>Absorbance</th>
+						<th>[Fe<sup>3+</sup>]<sub>eq</sub></th>
+						<th>[SCN<sup>-</sup>]<sub>eq</sub></th>
+					     <th>[FeSCN<sup>2+</sup>]<sub>eq</sub></th>
+
+					    </tr>
+				  </tbody>
+				</table>
+				<br />K<sub>eq</sub> Trials<br />
+				<table border=1>
+									  <tbody>
+									    <!-- Results table headers -->
+									    <tr>
+										<th>Tube</th>
+										<th>K<sub>eq</sub> A</th>
+										<th>K<sub>eq</sub> B*</th>
+										<th>K<sub>eq</sub> C</th>
+										<th>K<sub>eq</sub> D</th>
+										</tr>				  </tbody>
+	</table>
+	</center>
+	<br /><br /><br /><br /><span id="short"></span>
+	</div>
+	<script type="text/javascript">
+	function showHide(ID) {
+			elem = document.getElementById(ID);
+			if (elem.style.display == 'none') {
+				elem.style.display = 'block';
+			}
+			else{
+				elem.style.display = 'none';
+			}
+		}
+		
+		 $.getJSON(
+		        "http://api.bitly.com/v3/shorten?callback=?", 
+		        { 
+		            "format": "json",
+		            "apiKey": "R_a551579385b3fb84f6796876d396659b",
+		            "login": "yasyf",
+		            "longUrl": window.location.href
+		        },
+		        function(response)
+		        {
+		document.getElementById("short").innerHTML =  "Link to this page: <a href='"+response.data.url+"'>"+response.data.url+"</a>";
+		}
+		    );
+
+
+	</script>
+
 	</body>
 </html>
 
