@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../style.css" />
 	</head>
 	<body>
 			<div>
 				<form action="" method="get">
 					initial concentration = <input type="text" name="Ci" value="" /> <br />
-					liters carried forward = <input type="text" name="Lf" value="" /> <br />
-					liters diluted to = <input type="text" name="Ld" value="" /> <br />
+					liters of solution carried forward = <input type="text" name="Lf1" value="" /> <br />
+					liters diluted to = <input type="text" name="Ld1" value="" /> <br />
+					<span onclick="showHide('s2');">(optional) step 2:</span><br />
+					<span style="display: none;" id="s2">liters of solution carried forward = <input type="text" name="Lf2" value="" /> <br />				liters diluted to = <input type="text" name="Ld2" value="" /> <br /></span>
+					<br />
 					number of dilutions = <input type="text" name="n" value="" /> <br />
 					<input type="submit" value="Submit" />
 					</form>
-	Values For 'n', 'p', and 'i' Must Be Entered!	</div>
+	Shown Values Must Be Entered!	<br /><br /><br /><br /><span id="short"></span>
+	</div>
+	<script type="text/javascript">
+	function showHide(ID) {
+			elem = document.getElementById(ID);
+			if (elem.style.display == 'none') {
+				elem.style.display = 'block';
+			}
+			else{
+				elem.style.display = 'none';
+			}
+		}
+		
+		 $.getJSON(
+		        "http://api.bitly.com/v3/shorten?callback=?", 
+		        { 
+		            "format": "json",
+		            "apiKey": "R_a551579385b3fb84f6796876d396659b",
+		            "login": "yasyf",
+		            "longUrl": window.location.href
+		        },
+		        function(response)
+		        {
+		document.getElementById("short").innerHTML =  "Link to this page: <a href='"+response.data.url+"'>"+response.data.url+"</a>";
+		}
+		    );
+
+
+	</script>
 	</body>
 </html>
 

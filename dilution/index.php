@@ -30,9 +30,6 @@ ob_start(); // start the output buffer
 					liters diluted to = <input type="text" name="Ld1" value="<?php echo $_GET['Ld1']; ?>" /> <br />
 					<span onclick="showHide('s2');">(optional) step 2:</span><br />
 					<span style="display: none;" id="s2">liters of solution carried forward = <input type="text" name="Lf2" value="<?php echo $_GET['Lf2']; ?>" /> <br />				liters diluted to = <input type="text" name="Ld2" value="<?php echo $_GET['Ld2']; ?>" /> <br /></span>
-					<span onclick="showHide('s3');">(optional) step 3:</span><br />
-					<span id="s3" style="display: none;">liters of solution carried forward = <input type="text" name="Lf3" value="<?php echo $_GET['Lf3']; ?>" /> <br />
-					liters diluted to = <input type="text" name="Ld3" value="<?php echo $_GET['Ld3']; ?>" /> <br /></span>
 					<br />
 					number of dilutions = <input type="text" name="n" value="<?php echo $_GET['n']; ?>" /> <br />
 					<input type="submit" value="Submit" />
@@ -53,6 +50,7 @@ ob_start(); // start the output buffer
 		$Lf3 = $_GET['Lf3'];
 		$Ld3 = $_GET['Ld3'];
 		$n = $_GET['n'];
+		$Ci2 = dilute($Ci,$Lf2,$Ld2);
 	for ($i=0;$i<=$n;$i++) {
 			$tt = $i+1;
 			if($i>0)
@@ -60,14 +58,10 @@ ob_start(); // start the output buffer
 			$Ci = dilute($Ci,$Lf1,$Ld1);
 			if(isset($_GET['Lf2']) && isset($_GET['Ld2']) && is_numeric($_GET['Lf2']) && is_numeric($_GET['Ld2']))
 			{
-			$Ci = dilute($Ci,$Lf2,$Ld2);
+			$Ci2 = dilute($Ci,$Lf2,$Ld2);
+				}
 			}
-			if(isset($_GET['Lf3']) && isset($_GET['Ld3']) && is_numeric($_GET['Lf3']) && is_numeric($_GET['Ld3']))
-			{
-			$Ci = dilute($Ci,$Lf3,$Ld3);
-			}
-			}
-			echo "Test Tube $tt: $Ci M <br />";
+			echo "Test Tube $tt: $Ci2 M <br />";
 	}
 	
 		}
@@ -83,6 +77,7 @@ ob_start(); // start the output buffer
 				$conc = $moles / $Ld;	
 				return $conc;
 	}
+
 	?>
 	<br /><br /><br /><br /><span id="short"></span>
 	</div>

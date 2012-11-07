@@ -41,6 +41,7 @@ ob_start(); // start the output buffer
 	<a href="series">[series generator]</a><br />
 <a href="sigma_notation">[sigma notation generator]</a><br />
 <a href="trophic">[energy through trophic levels calculator]</a><br />
+<a href="absorbance_concentration_lab">[absorbance concentration lab]</a><br />
 <a href="dilution">[multiple dilutions calculator]</a><br /><br />
 © Copyright 2012 Yasyf Mohamedali. All Rights Reserved.<br />
 </div>
