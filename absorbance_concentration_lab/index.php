@@ -69,8 +69,12 @@ ob_start(); // start the output buffer
 						<th>Tube</th>
 						<th>[Fe<sup>3+</sup>]<sub>i</sub></th>
 					      <th>[SCN<sup>-</sup>]<sub>i</sub></th>
+						<th>[FeSCN<sup>2+</sup>]<sub>i</sub></th>
 					      <th>Absorbance</th>
-					      <th>[FeSCN<sup>2+</sup>]<sub>eq</sub></th>
+						<th>[Fe<sup>3+</sup>]<sub>eq</sub></th>
+						<th>[SCN<sup>-</sup>]<sub>eq</sub></th>
+					     <th>[FeSCN<sup>2+</sup>]<sub>eq</sub></th>
+
 					    </tr>
 	<?php
 	//error_reporting(0);
@@ -86,6 +90,8 @@ ob_start(); // start the output buffer
 		$rxnConcSCN = array();
 		$absorbance = array();
 		$eqConcFeSCN = array();
+		$eqConcFe = array();
+		$eqConcSCN = array();
 			for ($i=0;$i<$n;$i++) {
 				$tt = $i+1;
 			echo("<tr id='tt $tt'>");
@@ -101,16 +107,72 @@ ob_start(); // start the output buffer
 			$rxnConcSCN[$i] = $CSCN;
 			$absorbance[$i] = $$Ax;
 			$eqConcFeSCN[$i] = $CiFeSCN;
-			echo "<td id='$tt c1'>$tt</td>";
-			echo "<td id='$tt c2'>$rxnConcFe[$i]</td>";
-			echo "<td id='$tt c3'>$rxnConcSCN[$i]</td>";
-			echo "<td id='$tt c4'>$absorbance[$i]</td>";
-			echo "<td id='$tt c5'>$eqConcFeSCN[$i]</td>";
-			echo(" 
-			   	  </tr>");
+			$eqConcFe[$i] = eqConc($rxnConcFe[$i],$eqConcFeSCN[$i]);
+			$eqConcSCN[$i] = eqConc($rxnConcSCN[$i],$eqConcFeSCN[$i]);
+			echo "<td id='$tt tt'>$tt</td>";
+			echo "<td id='$tt CiFe'>$rxnConcFe[$i]</td>";
+			echo "<td id='$tt CiSCN'>$rxnConcSCN[$i]</td>";
+			echo "<td id='$tt CiFeSCN'>0</td>";
+			echo "<td id='$tt abs'>$absorbance[$i]</td>";
+			echo "<td id='$tt CeqFe'>$eqConcFe[$i]</td>";
+			//dirty fix
+			if($i==1)
+			{
+				echo "<td id='$tt CeqSCN'>";
+				echo number_format($eqConcSCN[$i],15);
+				echo "</td>";
+			}
+			else {
+				echo "<td id='$tt CeqSCN'>$eqConcSCN[$i]</td>";
+			}
+			echo "<td id='$tt CeqFeSCN'>$eqConcFeSCN[$i]</td>";
+			echo("</tr>");
 	}
 			}
-
+			?>
+			  </tbody>
+				</table>
+				<br />K<sub>eq</sub> Trials<br />
+				<table border=1>
+									  <tbody>
+									    <!-- Results table headers -->
+									    <tr>
+										<th>Tube</th>
+										<th>K<sub>eq</sub> A</th>
+										<th>K<sub>eq</sub> B*</th>
+										<th>K<sub>eq</sub> C</th>
+										<th>K<sub>eq</sub> D</th>
+										</tr>			<?php
+			$A = array();
+			$B = array();
+			$C = array();
+			$D = array();
+			for ($i=1;$i<$n;$i++) {
+							$tt = $i+1;
+						echo("<tr id='trial $tt'>");
+						$A[$i] = ($eqConcFeSCN[$i]*$eqConcFe[$i])/$eqConcSCN[$i];
+						$B[$i] = $eqConcFeSCN[$i]/($eqConcFe[$i]*$eqConcSCN[$i]);
+						$C[$i] = $eqConcSCN[$i]*$eqConcFeSCN[$i]*$eqConcFe[$i];
+						$D[$i] = ($eqConcFe[$i] + $eqConcSCN[$i]) / $eqConcFeSCN[$i];
+						echo "<td id='$tt tube'>$tt</td>";
+						echo "<td id='$tt A'>$A[$i]</td>";
+						echo "<td id='$tt B'>$B[$i]</td>";
+						echo "<td id='$tt C'>$C[$i]</td>";
+						echo "<td id='$tt D'>$D[$i]</td>";
+						echo("</tr>");
+						}
+						echo "<tr><td></td></tr>";
+						$Aratio = $A[1]/$A[$n-1];
+						$Bratio = $B[1]/$B[$n-1];
+						$Cratio = $C[1]/$C[$n-1];
+						$Dratio = $D[1]/$D[$n-1];
+						echo("<tr id='trial totals'>");
+						echo "<td id='total tube'>Ratio</td>";
+						echo "<td id='total A'>$Aratio</td>";
+						echo "<td id='total B'>$Bratio</td>";
+						echo "<td id='total C'>$Cratio</td>";
+						echo "<td id='total D'>$Dratio</td>";
+						echo("</tr>");
 
 	function dilute($Ci,$Lf,$Ld) {
 				$moles = $Ci*$Lf;
@@ -120,6 +182,10 @@ ob_start(); // start the output buffer
 	function absorbance_conc($CFeSCN,$Ax,$Ai) {
 			$CeqFeSCN = $CFeSCN * ($Ax/$Ai);
 			return $CeqFeSCN;
+	}
+	function eqConc($CiReact,$CeqProd) {
+			$CeqReact = $CiReact - $CeqProd;
+			return $CeqReact;
 	}
 
 	?>
