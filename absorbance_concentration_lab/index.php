@@ -35,19 +35,19 @@ ob_start(); // start the output buffer
 						</script>
 			<div>
 				<form action="" method="get">
-					number of test tubes = <input type="text" name="n" id="n" value="<?php echo $_GET['n']; ?>" onblur="updateFields();" /> <br />
+					Number Of Test Tubes = <input type="text" name="n" id="n" value="<?php echo $_GET['n']; ?>" onblur="updateFields();" /> <br />
 					Intial Concentrations:<br />
-					initial concentration Fe<sup>3+</sup> source = <input type="text" name="CiFe" value="<?php echo $_GET['CiFe']; ?>" /> <br />
-					initial concentration SCN<sup>-</sup> source = <input type="text" name="CiSCN" value="<?php echo $_GET['CiSCN']; ?>" /> <br />
+					Initial Concentration Fe<sup>3+</sup> Source = <input type="text" name="CiFe" value="<?php echo $_GET['CiFe']; ?>" /> <br />
+					initial concentration SCN<sup>-</sup> Source = <input type="text" name="CiSCN" value="<?php echo $_GET['CiSCN']; ?>" /> <br />
 					Serial Dilution:<br />
-					liters of Fe<sup>3+</sup> solution carried forward = <input type="text" name="Lf1Fe" value="<?php echo $_GET['Lf1Fe']; ?>" /> <br />
-					liters Fe<sup>3+</sup> solution diluted to = <input type="text" name="Ld1Fe" value="<?php echo $_GET['Ld1Fe']; ?>" /> <br />
+					Liters Of Fe<sup>3+</sup> Solution Carried Forward = <input type="text" name="Lf1Fe" value="<?php echo $_GET['Lf1Fe']; ?>" /> <br />
+					Liters Fe<sup>3+</sup> Solution Diluted To = <input type="text" name="Ld1Fe" value="<?php echo $_GET['Ld1Fe']; ?>" /> <br />
 					Reaction Dilution:<br />
-					liters of Fe<sup>3+</sup> solution = <input type="text" name="Lf2Fe" value="<?php echo $_GET['Lf2Fe']; ?>" /> <br />					liters of SCN<sup>-</sup> solution = <input type="text" name="Lf2SCN" value="<?php echo $_GET['Lf2SCN']; ?>" /> <br />
+					Liters Of Fe<sup>3+</sup> Solution = <input type="text" name="Lf2Fe" value="<?php echo $_GET['Lf2Fe']; ?>" /> <br />					Liters Of SCN<sup>-</sup> Solution = <input type="text" name="Lf2SCN" value="<?php echo $_GET['Lf2SCN']; ?>" /> <br />
 					<br />
 					
 					Absorbance Concentrations:<br />
-					absorbance of tube 1 = <input type="text" name="Ai"  value="<?php echo $_GET['Ai']; ?>" /> <br />
+					&nbsp;Absorbance Of Tube 1 = <input type="text" name="Ai"  value="<?php echo $_GET['Ai']; ?>" /> <br />
 				
 					<div id="fields">
 					<?php
@@ -55,7 +55,7 @@ ob_start(); // start the output buffer
 					extract($_GET, EXTR_SKIP);
 					$var = "Ax$i";
 					$Ax = $$var;
-					echo "absorbance of tube $i = <input type='text' name='Ax$i' value='$Ax' /><br />";
+					echo "Absorbance Of Tube $i = <input type='text' name='Ax$i' value='$Ax' /><br />";
 					}
 					?>
 					</div>

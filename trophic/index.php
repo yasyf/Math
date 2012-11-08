@@ -25,9 +25,9 @@ ob_start(); // start the output buffer
 	<body>
 			<div>
 				<form action="" method="get">
-					# of trophic levels = <input type="text" name="n" value="<?php echo $_GET['a']; ?>" /> <br />
+					# of trophic levels = <input type="text" name="n" value="<?php echo $_GET['n']; ?>" /> <br />
 					% energy preserved per level = <input type="text" name="p" value="<?php echo $_GET['n']; ?>" /> <br />
-					initial energy present = <input type="text" name="i" value="<?php echo $_GET['d']; ?>" /> <br />
+					initial energy present = <input type="text" name="i" value="<?php echo $_GET['i']; ?>" /> <br />
 					<input type="submit" value="Submit" />
 					</form>
 	<?php
