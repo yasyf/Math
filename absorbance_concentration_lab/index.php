@@ -234,8 +234,12 @@ $title = "Analyzing Quantitative Relationships Involving Concentrations of React
 	  curl_close($ch);
 	  return $data;
 	}
-
+	
 	$Url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+	if($_REQUEST['print'] == "yes")
+		{
+		$Url = substr($Url, 0, -10);
+		}
 	$PDFUrl = $Url."&print=yes";
 	$short_url = get_bitly_short_url($Url,'yasyf','R_a551579385b3fb84f6796876d396659b');
 	?>
