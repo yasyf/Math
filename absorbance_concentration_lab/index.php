@@ -2,7 +2,12 @@
 // TOP of your script
 $cachefile = 'cache/'.'index';
 if ($_SERVER['QUERY_STRING']!='') {
-$cachefile .= '_'.base64_encode($_SERVER['QUERY_STRING']);
+	$query = $_SERVER['QUERY_STRING'];
+	if($_REQUEST['print'] == "yes")
+			{
+			$query = substr($query, 0, -10);
+			}
+$cachefile .= '_'.base64_encode($query);
 }
 // Serve from the cache 
 
