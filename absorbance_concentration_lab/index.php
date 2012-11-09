@@ -246,9 +246,9 @@ $title = "Analyzing Quantitative Relationships Involving Concentrations of React
 	<br />
 	<p><?php echo "Result: K<sub>eq</sub> Trial <strong>$validKeq</strong> is the correct equilibrium expression calculation."; ?><p>
 	</center>
-	<div style="font-size:16px">
-	<p style="font-size:16px"><a style="font-size:16px" href="<?php echo $PDFUrl ?>">Generate Downloadable PDF</a></p>
-	<p style="font-size:16px"><a style="font-size:16px" href="#" onclick="window.print();return false;">Print This Page</a></p>
+	<div style="font-size:16px" class="smaller">
+	<p style="font-size:16px" class="smaller"><a style="font-size:16px" class="smaller" href="<?php echo $PDFUrl ?>">Generate Downloadable PDF</a></p>
+	<p style="font-size:16px" class="smaller"><a style="font-size:16px" class="smaller" href="#" onclick="window.print();return false;">Print This Page</a></p>
 	<p id="short" style="font-size:16px">Link to this page: <a style='font-size:16px' href="<?php echo $short_url; ?>"><?php echo $short_url; ?></a></p>
 	</div>
 	</div>
